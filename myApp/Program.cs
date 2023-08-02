@@ -214,19 +214,12 @@ namespace myApp
 
                         db.Database.ExecuteSqlRaw("DROP INDEX user_fullName_idx"); //удаляем индексы в конце для возможности тестирования
                         db.Database.ExecuteSqlRaw("DROP INDEX user_sex_idx");
-
+                        break;
+                    default: 
+                        Console.WriteLine("неверный параметр командной строки");
                         break;
                 }
 
-                // получаем объекты из бд и выводим на консоль
-                var users = db.Users.ToList();
-
-                //Console.WriteLine("Список объектов:");
-                foreach (User u in users)
-                {
-                    ;
-                    //Console.WriteLine($"{u.Id}.{u.fullName} {u.birthDate} {u.sex}");
-                }
             }
 
 
