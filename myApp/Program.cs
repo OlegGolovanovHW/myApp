@@ -176,8 +176,7 @@ namespace myApp
                         Console.WriteLine("Данные успешно добавлены");
                         break;
                     case "5":
-                        //Результат выборки из таблицы по критерию: пол мужской, ФИО начинается с "F". Сделать замер времени выполнения.
-                        //Вывод приложения должен содержать время.
+                        //Результат выборки из таблицы по критерию: пол мужской, ФИО начинается с "F".
                         var stopwatch = new Stopwatch();
                         stopwatch.Start();
                         var man = db.Users.Where(u => u.sex == "Male" && u.fullName.StartsWith("F")).ToList();
@@ -216,7 +215,7 @@ namespace myApp
                         db.Database.ExecuteSqlRaw("DROP INDEX user_sex_idx");
                         break;
                     default: 
-                        Console.WriteLine("неверный параметр командной строки");
+                        Console.WriteLine("Неверный параметр командной строки");
                         break;
                 }
 
